@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - QRFoodOrderingSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/QRFoodOrderingSystem.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header-logo {
+            max-height: 40px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .header-logo-container {
+            display: flex;
+            flex-direction: column; /* Stacks the logo and tagline vertically */
+            align-items: center; /* Centers the tagline under the logo */
+            margin-right: 10px; /* Spacing between logo+tagline and title */
+        }
+
+        .header-tagline {
+            font-size: 12px;
+            font-style: italic;
+            font-weight: bold;
+            color: #666;
+            font-family: 'Lobster', cursive;
+        }
+
+        .header-title {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 40px 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Container for footer content */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        /* Columns inside the footer */
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            max-width: 500px;
+        }
+
+            /* Heading styling for each column */
+        .footer-column h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+            /* Paragraph and link styling */
+        .footer-column p,
+        .footer-column a {
+            font-size: 12px;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            display: block;
+        }
+
+        .footer-column a:hover {
+            color: #fff;
+        }
+
+        /* Social media section styling */
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* Social media icon styling */
+        .footer-social a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+         /* Image icons inside the social media links */
+        .footer-social a img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Hover effect for social media icons */
+        .footer-social a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Footer text links */
+        .footer-text-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-text-links p,
+        .footer-text-links a {
+            font-size: 12px;
+            color: #ccc;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .footer-text-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header"> 
+        <div class="header-logo-container">
+            <img src="~/logo.jpeg" alt="Restaurant Logo" class="header-logo">
+            <div class="header-tagline">Scan.Order.Enjoy</div>
+        </div>
+        <div class="header-title">Sara's Cloud Kitchen</div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <!-- About Us Section -->
+            <div class="footer-column footer-about">
+                <h3>About Us</h3>
+                <p>Our restaurant offers a perfect blend of delicious cuisine, warm ambiance, and exceptional service. From carefully curated dishes to a welcoming atmosphere, we strive to provide an unforgettable dining experience. Whether you're here for a family gathering or a romantic evening, every detail is crafted to ensure your satisfaction.</p>
+                <div class="footer-social">
+                    <a href="#"><img src="facebook.png" alt="Facebook" /></a>
+                    <a href="#"><img src="instagram.png" alt="Instagram" /></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter" /></a>
+                </div>
+            </div>
+
+            <!-- More Pages Section -->
+            <div class="footer-column">
+                <h3>Pages</h3>
+                <a href="#">Trending</a>
+                <a href="#">Most Popular</a>
+                <a href="#">Restaurant Details</a>
+                <a href="#">Favorites</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Links -->
+        <div class="footer-text-links">
+            <p>&copy; 2025 - Sara's Kitchen QR-Based Food Ordering System. All rights reserved.</p>
+            <p>
+                <a href="#">Home</a> |
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
